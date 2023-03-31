@@ -1,0 +1,36 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "outputType" : "XML",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "soap:Envelope",
+  "type" : "object",
+  "properties" : {
+    "soap:Body" : {
+      "id" : "http://wso2jsonschema.org/soap:Body",
+      "type" : "object",
+      "properties" : {
+        "Add" : {
+          "id" : "http://wso2jsonschema.org/soap:Body/Add",
+          "type" : "object",
+          "properties" : {
+            "intA" : {
+              "id" : "http://wso2jsonschema.org/soap:Body/Add/intA",
+              "type" : "number"
+            },
+            "intB" : {
+              "id" : "http://wso2jsonschema.org/soap:Body/Add/intB",
+              "type" : "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "namespaces" : [ {
+    "prefix" : "soap",
+    "url" : "http://schemas.xmlsoap.org/soap/envelope/"
+  }, {
+    "prefix" : "axis2ns3",
+    "url" : "http://tempuri.org/"
+  } ]
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/calculator" name="CalculatorAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <payloadFactory media-type="xml">
+                <format>
+                    <soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                        <soap12:Body>
+                            <Subtract xmlns="http://tempuri.org/">
+                                <a>$1</a>
+                                <b>$2</b>
+                            </Subtract>
+                        </soap12:Body>
+                    </soap12:Envelope>
+                </format>
+                <args>
+                    <arg evaluator="json" expression="$.firstNumber"/>
+                    <arg evaluator="json" expression="$.secondNumber"/>
+                </args>
+            </payloadFactory>
+            <property name="messageType" scope="axis2" type="STRING" value="application/soap+xml"/>
+            <call>
+                <endpoint key="CalculatorEP"/>
+            </call>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/add">
+        <inSequence>
+            <payloadFactory media-type="xml">
+                <format>
+                    <soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                        <soap12:Body>
+                            <Add xmlns="http://tempuri.org/">
+                                <a>$1</a>
+                                <b>$2</b>
+                            </Add>
+                        </soap12:Body>
+                    </soap12:Envelope>
+                </format>
+                <args>
+                    <arg evaluator="json" expression="$.firstNumber"/>
+                    <arg evaluator="json" expression="$.secondNumber"/>
+                </args>
+            </payloadFactory>
+            <property name="messageType" scope="axis2" type="STRING" value="application/soap+xml"/>
+            <call>
+                <endpoint key="CalculatorEP"/>
+            </call>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamapper:DataMapperRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:datamapper="http:///org/wso2/developerstudio/eclipse/gmf/datamapper">
+  <input>
+    <treeNode name="root" schemaDataType="OBJECT" level="1">
+      <node name="firstNumber" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/firstNumber"/>
+        <properties key="nullable" value="false"/>
+        <outNode>
+          <outgoingLink/>
+          <outgoingLink inNode="//@output/@treeNode.0/@node.1/@node.0/@node.0/@inNode"/>
+        </outNode>
+        <inNode/>
+      </node>
+      <node name="secondNumber" schemaDataType="STRING" level="2">
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/secondNumber"/>
+        <properties key="nullable" value="false"/>
+        <outNode>
+          <outgoingLink/>
+          <outgoingLink inNode="//@output/@treeNode.0/@node.1/@node.0/@node.1/@inNode"/>
+        </outNode>
+        <inNode/>
+      </node>
+      <properties key="type" value="object"/>
+      <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+      <properties key="id" value="http://wso2jsonschema.org"/>
+      <properties key="nullable" value="false"/>
+      <outNode/>
+      <inNode/>
+    </treeNode>
+  </input>
+  <output>
+    <treeNode name="soapenv:Envelope" schemaDataType="OBJECT" level="1">
+      <node name="soapenv:Header" schemaDataType="STRING" level="2">
+        <properties key="namespaces" value="{prefix=soapenv, url=http://schemas.xmlsoap.org/soap/envelope/}"/>
+        <properties key="type" value="string"/>
+        <properties key="id" value="http://wso2jsonschema.org/soapenv:Header"/>
+        <properties key="nullable" value="false"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <node name="soapenv:Body" schemaDataType="OBJECT" level="2">
+        <node name="tem:Add" schemaDataType="OBJECT" level="3">
+          <node name="tem:a" schemaDataType="NUMBER" level="4">
+            <properties key="namespaces" value="{prefix=tem, url=http://tempuri.org/}"/>
+            <properties key="type" value="number"/>
+            <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/tem:Add/tem:a"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode incomingLink="//@input/@treeNode.0/@node.0/@outNode/@outgoingLink.1"/>
+          </node>
+          <node name="tem:b" schemaDataType="NUMBER" level="4">
+            <properties key="namespaces" value="{prefix=tem, url=http://tempuri.org/}"/>
+            <properties key="type" value="number"/>
+            <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/tem:Add/tem:b"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode incomingLink="//@input/@treeNode.0/@node.1/@outNode/@outgoingLink.1"/>
+          </node>
+          <properties key="namespaces" value="{prefix=tem, url=http://tempuri.org/}"/>
+          <properties key="type" value="object"/>
+          <properties key="id" value="http://wso2jsonschema.org/soapenv:Body/tem:Add"/>
+          <properties key="nullable" value="false"/>
+          <properties key="properties_id" value="{tem:a={id=http://wso2jsonschema.org/soapenv:Body/tem:Add/tem:a, type=number}, tem:b={id=http://wso2jsonschema.org/soapenv:Body/tem:Add/tem:b, type=number}}"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <properties key="namespaces" value="{prefix=soapenv, url=http://schemas.xmlsoap.org/soap/envelope/}"/>
+        <properties key="type" value="object"/>
+        <properties key="id" value="http://wso2jsonschema.org/soapenv:Body"/>
+        <properties key="nullable" value="false"/>
+        <properties key="properties_id" value="{tem:Add={id=http://wso2jsonschema.org/soapenv:Body/tem:Add, type=object, properties={tem:a={id=http://wso2jsonschema.org/soapenv:Body/tem:Add/tem:a, type=number}, tem:b={id=http://wso2jsonschema.org/soapenv:Body/tem:Add/tem:b, type=number}}}}"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <properties key="namespaces" value="{prefix=soapenv, url=http://schemas.xmlsoap.org/soap/envelope/},{prefix=tem, url=http://tempuri.org/}"/>
+      <properties key="namespaces" value="{prefix=soapenv, url=http://schemas.xmlsoap.org/soap/envelope/}"/>
+      <properties key="type" value="object"/>
+      <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+      <properties key="id" value="http://wso2jsonschema.org"/>
+      <properties key="nullable" value="false"/>
+      <outNode/>
+      <inNode/>
+    </treeNode>
+  </output>
+</datamapper:DataMapperRoot>

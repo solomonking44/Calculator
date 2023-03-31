@@ -1,0 +1,14 @@
+map_S_root_S_Envelope = function(){ 
+var outputsoapenv_Envelope={};
+
+outputsoapenv_Envelope =  {};
+outputsoapenv_Envelope.soapenv_Body =  {};
+outputsoapenv_Envelope.soapenv_Body.tem_Add =  {};
+outputsoapenv_Envelope.soapenv_Body.tem_Add.tem_a = Number(inputroot.firstNumber);
+outputsoapenv_Envelope.soapenv_Body.tem_Add.tem_b = Number(inputroot.secondNumber);
+return outputsoapenv_Envelope;
+};
+
+
+
+

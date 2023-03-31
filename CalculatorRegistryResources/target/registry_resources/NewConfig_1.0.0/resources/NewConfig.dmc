@@ -1,0 +1,14 @@
+map_S_root_S_Envelope = function(){ 
+var outputsoap_Envelope={};
+
+outputsoap_Envelope =  {}
+outputsoap_Envelope.soap_Body =  {};
+outputsoap_Envelope.soap_Body.Add =  {};
+outputsoap_Envelope.soap_Body.Add.intA = inputroot.firstNumber;
+outputsoap_Envelope.soap_Body.Add.intB = inputroot.secondNumber;
+return outputsoap_Envelope;
+};
+
+
+
+

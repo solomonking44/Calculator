@@ -1,0 +1,8 @@
+map_S_Add_S_root = function(){ 
+var outputroot={};
+
+outputroot =  {};
+outputroot.Answer = 0+inputAdd.intA+inputAdd.intB;
+return outputroot;
+};
+
